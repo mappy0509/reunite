@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reunite Group - 福岡 | 飲食・美容・整体事業</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts: Inter (Tailwind default) & Noto Sans JP (for Japanese) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config (必須) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
+                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
+                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
+                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
+                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
+                    },
+                    transitionTimingFunction: {
+                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    // ===== 修正箇所 (アニメーション定義の追加) =====
+                    animation: {
+                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-down': {
+                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(10px)', opacity: '0' },
+                        }
+                    }
+                    // ===== 修正ここまで =====
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-white text-brand-secondary font-sans antialiased">
+
+    <!-- ===== ヘッダーナビゲーション ===== -->
+    <header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 w-full">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- ロゴ -->
+                <a href="#" class="text-2xl font-black text-brand-primary nav-link" data-page="home">
+                    Reunite Group
+                </a>
+                
+                <!-- PC向けナビゲーション -->
+                <div class="hidden md:flex space-x-4 lg:space-x-6">
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="home">ホーム</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="syktsr">SYKTSR</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="fndr">FNDR</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="king">KING</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="partners">提携企業</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="media">メディア出演</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="contact">お問い合わせ</a>
+                </div>
+
+                <!-- ハンバーガーボタン (モバイル) -->
+                <button id="hamburger-btn" class="md:hidden z-50 flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                    <span class="hamburger-line line-1 block w-6 h-0.5 bg-brand-primary rounded-full"></span>
+                    <span class="hamburger-line line-2 block w-6 h-0.5 bg-brand-primary rounded-full"></span>
+                    <span class="hamburger-line line-3 block w-6 h-0.5 bg-brand-primary rounded-full"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-lg flex flex-col justify-center items-center space-y-8 text-2xl z-40">
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="home">ホーム</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="syktsr">SYKTSR</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="fndr">FNDR</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="king">KING</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="partners">提携企業</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="media">メディア出演</a>
+            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="contact">お問い合わせ</a>
+        </div>
+    </header>
+
+    <!-- ===== メインコンテンツエリア ===== -->
+    <main>
+
+        <!-- ===== 1. ホーム (HOME) ===== -->
+        <section id="home" class="page-section">
+            <!-- ヒーローセクション -->
+            <div class="relative h-[50vh] md:h-[70vh] flex items-center justify-center text-center text-white overflow-hidden">
+                <!-- 背景画像 -->
+                <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
+                <img src="img/hero-background.png" 
+                     alt="[福岡の街並みとオフィスをイメージした背景画像]" 
+                     class="absolute inset-0 w-full h-full object-cover">
+                
+                <!-- メインテキスト -->
+                <div class="relative z-20 p-4 max-w-3xl">
+                    <h2 class="hero-animate text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight" style="animation-delay: 0.5s;">
+                        再び集う・繋がる。<br>"あなたらしさ"の創出へ
+                    </h2>
+                    
+                    <!-- ===== 削除: ボタン ===== -->
+                    <!-- 
+                    <a href="#" class="nav-link hero-animate ...">
+                        事業内容を見る
+                    </a>
+                    -->
+                </div>
+
+                <!-- ===== 追加: スクロールダウンインジケーター ===== -->
+                <div class="hero-animate absolute bottom-12 left-1/2 -translate-x-1/2 z-20" style="animation-delay: 1.2s;">
+                    <div class="w-8 h-14 border-2 border-white/60 rounded-full flex justify-center items-start pt-2.5">
+                        <!-- アニメーションするドット -->
+                        <div class="w-2 h-3 bg-white rounded-full animate-scroll-down"></div>
+                    </div>
+                </div>
+                <!-- ===== 追加ここまで ===== -->
+
+            </div>
+
+            <!-- ===== 新規追加: Reunite Groupとはセクション ===== -->
+            <div class="bg-white py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">Reunite Groupとは</h2>
+                    
+                    <div class="text-lg text-slate-600 leading-relaxed space-y-6 scroll-animate" style="transition-delay: 0.2s;">
+                        <p class="text-xl font-bold text-brand-secondary text-center">
+                            Reunite&nbsp;＝再び集う・つながる。<br>
+                            （リユナイト）
+                        </p>
+                        <p>
+                            私たちReunite Groupは、「人と人」「心と心」「過去と未来」をもう一度つなぎなおすことをテーマに、飲食・美容・ヘルスケア・空間づくりなど、多岐にわたるライフスタイル事業を展開しています。
+                        </p>
+                        <p>
+                            福岡を拠点にスタートした私たちは、「誰もが安心して立ち寄れ、自分らしくいられる“場所”や“時間”をつくること」それを最も大切な役割と考えています。
+                        </p>
+                        <p>
+                            グループ名に込めたのは、一度離れたものを再びつなぐ力。一人ひとりの想いや個性をそのまま受け入れ、尊重できる社会へ。
+                        </p>
+                        <p>
+                            それぞれの事業を通じて、「あなたらしさ」が輝く瞬間を、これからも全国に広げていきます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== 新規追加ここまで ===== -->
+
+
+            <!-- 事業紹介セクション -->
+            <div class="bg-brand-light py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">OUR BUSINESS</h2>
+                    <div class="grid grid-cols-1 gap-12">
+                        
+                        <!-- 飲食事業 (詳細カード) - ※ボタン追加対象外 -->
+                        <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate">
+                            <div class="flex flex-col md:flex-row">
+                                <!-- Image Column -->
+                                <div class="md:w-5/12 overflow-hidden">
+                                    <img src="img/business-food.png" 
+                                         alt="[バーのカウンターをイメージした画像]" 
+                                         class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                                </div>
+                                <!-- Details Column -->
+                                <div class="md:w-7/12 p-8 md:p-10">
+                                    <h3 class="text-2xl font-bold text-brand-primary mb-3">飲食事業 (SYKTSR)</h3>
+                                    <p class="text-slate-600 mb-8 text-lg">
+                                        福岡・中洲と大名エリアで、バーやラウンジを運営。多様な人々が集い、語らえる「憩いの空間」を提供します。
+                                    </p>
+                                    <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="syktsr">
+                                        SYKTSRの詳細を見る <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 美容・整体事業 (詳細カード) - ※ボタン追加対象外 -->
+                        <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.2s;">
+                            <div class="flex flex-col md:flex-row">
+                                <!-- Image Column -->
+                                <div class="md:w-5/12 overflow-hidden">
+                                    <img src="img/business-wellness.png" 
+                                         alt="[整体の施術をイメージした画像]" 
+                                         class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                                </div>
+                                <!-- Details Column -->
+                                <div class="md:w-7/12 p-8 md:p-10">
+                                    <h3 class="text-2xl font-bold text-brand-teal mb-3">美容・整体事業 (FNDR)</h3>
+                                    <p class="text-slate-600 mb-8 text-lg">
+                                        深夜3時まで営業する「ReaLize施術院」を運営。多忙な現代人の心と体を根本から整えます。
+                                    </p>
+                                    <a href="#" class="nav-link inline-block bg-brand-teal text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-teal-700 transition duration-300" data-page="fndr">
+                                        FNDRの詳細を見る <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 削除: 理念セクション ===== -->
+            <!-- 
+            <div class="bg-white py-16 sm:py-24">
+                ... (理念セクションのコード) ...
+            </div>
+            -->
+
+            <!-- ===== 削除: 代表挨拶 (ホームから移動) ===== -->
+            <!-- 
+            <div class="bg-brand-light py-16 sm:py-24">
+                ... (代表挨拶のコード) ...
+            </div>
+            -->
+        </section>
+
+        <!-- ===== 2. SYKTSR ===== -->
+        <section id="syktsr" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">合同会社SYKTSR</h2>
+            
+            <p class="text-center text-lg text-slate-600 max-w-3xl mx-auto mb-16 scroll-animate" style="transition-delay: 0.1s;">
+                福岡を中心に、幅広い年代の方々が集い、語らい、憩える「場」を提供することを目指し、飲食をはじめとした事業を展開しています。一人ひとりの個性や価値観が自然に尊重される場所を大切にしています。
+            </p>
+
+            <!-- 会社概要 -->
+            <div class="bg-white rounded-lg shadow-xl p-8 border border-gray-200 mb-16 max-w-3xl mx-auto scroll-animate" style="transition-delay: 0.2s;">
+                <h4 class="text-2xl font-bold text-brand-primary mb-6">COMPANY PROFILE</h4>
+                <ul class="space-y-3 text-slate-600">
+                    <li><strong class="text-brand-secondary w-24 inline-block">設立:</strong> 2024年3月13日</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">代表者:</strong> 代表社員 松浦颯汰</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">所在地:</strong> 福岡県福岡市中央区大名1-11-27</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">事業内容:</strong> 飲食店事業 (Bar方舟, Bar Ciel, Bar Polar, Lounge KING)</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">関連会社:</strong> 株式会社フナドリ</li>
+                </ul>
+            </div>
+            
+            <!-- ===== 追加: 代表挨拶 (ホームから移動) ===== -->
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 mb-16 scroll-animate" style="transition-delay: 0.25s;">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <img src="img/portrait-matsuura.png" alt="[代表 松浦颯汰氏のポートレート]" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto shadow-lg border-4 border-brand-primary">
+                        <h4 class="text-xl font-bold mt-4 text-brand-secondary">松浦 颯汰</h4>
+                        <p class="text-brand-primary font-medium">Reunite Group 会長<br>合同会社SYKTSR 代表</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-brand-secondary mb-4">ご挨拶</h3>
+                        <p class="text-slate-600 leading-relaxed space-y-4">
+                            私たちReunite Groupは、「人と人」「心と心」「過去と未来」をもう一度つなぎなおすことをテーマに、飲食・美容・ヘルスケア・空間づくりなど、多岐にわたるライフスタイル事業を展開しています。<br><br>
+                            福岡を拠点にスタートした私たちは、「誰もが安心して立ち寄れ、自分らしくいられる“場所”や“時間”をつくること」それを最も大切な役割と考えています。<br><br>
+                            グループ名に込めたのは、一度離れたものを再びつなぐ力。一人ひとりの想いや個性をそのまま受け入れ、尊重できる社会へ。<br>
+                            それぞれの事業を通じて、「あなたらしさ」が輝く瞬間を、これからも全国に広げていきます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== 追加ここまで ===== -->
+
+            <!-- 運営店舗 -->
+            <h3 class="text-3xl font-bold text-center mb-10 text-brand-secondary scroll-animate" style="transition-delay: 0.3s;">SHOPS</h3>
+            <div class="grid grid-cols-1 gap-12">
+                
+                <!-- Bar方舟 -->
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.4s;">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/shop-hakobune.png" alt="[Bar方舟のイメージ画像]" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <!-- Details Column -->
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar方舟 (ハコブネ)</h3>
+                            <p class="text-slate-600 mb-4">
+                                大名に位置する落ち着いた雰囲気のバー。
+                                多彩なドリンクと共に、ゆったりとした時間をお過ごしいただけます。
+                                まさに都会の「方舟」のような、心安らぐ空間です。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市中央区大名1-11-27</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>20:00 〜 5:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bar Ciel -->
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.5s;">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/shop-ciel.png" alt="[Bar Cielのイメージ画像]" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <!-- Details Column -->
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar Ciel (シエル)</h3>
+                            <p class="text-slate-600 mb-4">
+                                中洲の喧騒を忘れさせる、地下に佇む隠れ家。
+                                「Ciel（空）」の名のように、開放的な気分で朝まで楽しめる空間です。
+                                深夜24時から朝8時まで営業しています。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市博多区中洲3-4-5 多門通りB1F</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>24:00 〜 8:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bar Polar -->
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.6s;">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/shop-polar.png" alt="[Bar Polarのイメージ画像]" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <!-- Details Column -->
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar Polar (ポーラー)</h3>
+                            <p class="text-slate-600 mb-4">
+                                中洲の中心部に位置し、洗練された大人の時間を過ごせるバー。
+                                「北極星」のように、いつでも変わらずそこにある安心感を提供します。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市博多区中洲4-2-16 RBコア中洲4-A</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>22:00 〜 5:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-slate-500 scroll-animate" style="transition-delay: 0.7s;">(※ Lounge KINGはKINGページに記載)</p>
+        </section>
+
+
+        <!-- ===== 3. FNDR (株式会社フナドリ) ===== -->
+        <section id="fndr" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">株式会社フナドリ (FNDR)</h2>
+
+            <!-- 会社概要 -->
+            <div class="bg-white rounded-lg shadow-xl p-8 border border-gray-200 mb-16 max-w-3xl mx-auto scroll-animate" style="transition-delay: 0.1s;">
+                <h4 class="text-2xl font-bold text-brand-teal mb-6">COMPANY PROFILE</h4>
+                <ul class="space-y-3 text-slate-600">
+                    <li><strong class="text-brand-secondary w-24 inline-block">設立:</strong> 2025年4月17日</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">代表者:</strong> 代表取締役 有働 嵐</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">役員:</strong> 取締役 松浦颯汰</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">所在地:</strong> 福岡県福岡市中央区大名1-11-27-106</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">事業内容:</strong> 施術院（ReaLize施術院）、営業代行（FN営業代行）</li>
+                    <li><strong class="text-brand-secondary w-24 inline-block">関連会社:</strong> 合同会社SYKTSR</li>
+                </ul>
+            </div>
+
+            <!-- 代表挨拶 (有働氏) -->
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 mb-16 scroll-animate" style="transition-delay: 0.2s;">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <img src="img/portrait-udo.png" alt="[代表 有働嵐氏のポートレート]" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto shadow-lg border-4 border-brand-teal">
+                        <h4 class="text-xl font-bold mt-4 text-brand-secondary">有働 嵐</h4>
+                        <p class="text-brand-teal font-semibold">株式会社フナドリ 代表取締役</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h4 class="text-2xl font-bold text-slate-800 mb-4">コンセプト</h4>
+                        <p class="text-slate-700 leading-relaxed space-y-4">
+                            以前の仕事では、日々の忙しさに追われ、自分の体に向き合う時間をなかなか持つことができませんでした。
+                            疲れや不調を感じても、我慢してやり過ごすことが当たり前で、ケアする時間も場所も見つけられない日々が続いていました。<br><br>
+                            
+                            同じように「体を整えたくても行く時間がない」「夜に開いているところがない」と感じている方が本当に多いことに気づき、どんな業種・生活スタイルの方でも無理なく通える場所をつくりたいという考えから、「ReaLize施術院」を立ち上げました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-16 border-gray-200">
+
+            <!-- FNDR 事業一覧 -->
+            <div class="grid grid-cols-1 gap-12">
+            
+                <!-- ReaLize施術院 (美容・整体事業) -->
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.3s;">
+                    <h3 class="text-3xl font-bold text-center text-brand-teal pt-10">美容・整体事業 (WELLNESS)</h3>
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-5/12 overflow-hidden p-8">
+                            <img src="img/shop-realize.png" alt="[ReaLize施術院の内観]" class="rounded-lg shadow-lg w-full h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                        </div>
+                        <!-- Details Column -->
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h4 class="text-2xl font-bold text-center mb-6 text-slate-800">ReaLize施術院</h4>
+                            <p class="text-slate-700 mb-4 text-lg">
+                                「ReaLize」という名前には、「気づき、理解し、自分自身で体を良くしていけるように」という願いを込めています。
+                                根本からの改善を目指した丁寧なカウンセリングと施術を行います。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 mt-2 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-teal"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市中央区大名2-2-2 後藤ビル402</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-teal"></i> <strong class="text-slate-800">営業時間:</strong><br>15:00 〜 3:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FN営業代行 (その他事業) -->
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.4s;">
+                    <h3 class="text-3xl font-bold text-center text-gray-500 pt-10">その他事業 (OTHERS)</h3>
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Column -->
+                        <div class="md:w-5/12 overflow-hidden p-8">
+                             <img src="img/business-sales.png" alt="[営業代行のイメージ画像]" class="rounded-lg shadow-lg w-full h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                        </div>
+                        <!-- Details Column -->
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h4 class="text-2xl font-bold text-center mb-6 text-slate-800">FN営業代行</h4>
+                            <p class="text-slate-700 mb-4 text-lg">
+                                株式会社フナドリの一部門として、営業代行サービスを提供しています。（2025年7月 開業）
+                                Reunite Groupで培ったノウハウを活かし、クライアント様のビジネス成長を強力にサポートします。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="contact">
+                                サービスについて問い合わせる
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="my-16 border-gray-200">
+
+            <!-- 採用情報 (FNDR) -->
+            <div class="bg-white rounded-lg shadow-xl p-8 border border-gray-200 scroll-animate" style="transition-delay: 0.5s;">
+                <h3 class="text-3xl font-bold text-center text-brand-secondary mb-10">RECRUIT</h3>
+                <div class="bg-white rounded-lg max-w-2xl mx-auto">
+                    <span class="inline-block bg-brand-teal text-white text-sm font-bold px-3 py-1 rounded-full mb-4">美容・整体部門</span>
+                    <h3 class="text-2xl font-bold text-brand-secondary mb-2">ReaLize施術院 スタッフ</h3>
+                    <p class="text-slate-500 mb-4">深夜まで営業する施術院で、お客様の「整う」をサポートします。</p>
+                    <ul class="text-slate-600 list-disc list-inside space-y-2">
+                        <li><strong class="text-brand-secondary">勤務地:</strong> ReaLize施術院 (大名)</li>
+                        <li><strong class="text-brand-secondary">募集職種:</strong> 整体師、鍼灸師（資格保有者）</li>
+                        <li><strong class="text-brand-secondary">勤務時間:</strong> シフト制（深夜勤務可能な方歓迎）</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                         <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-10 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="contact">
+                            応募・お問い合わせ
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===== 4. KING ===== -->
+        <section id="king" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">Lounge KING</h2>
+
+            <!-- 店舗情報 -->
+            <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.1s;">
+                <div class="flex flex-col md:flex-row">
+                    <!-- Image Column -->
+                    <div class="md:w-5/12 overflow-hidden">
+                        <img src="img/shop-king.png" alt="[Lounge KINGのイメージ画像]" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                    </div>
+                    <!-- Details Column -->
+                    <div class="md:w-7/12 p-8 md:p-10">
+                        <h3 class="text-3xl font-bold text-brand-secondary mb-4">Lounge KING <span class="text-lg bg-brand-primary text-white font-bold px-3 py-1 rounded ml-2">NEW</span></h3>
+                        <p class="text-slate-600 mb-4 text-lg">
+                            中洲に新規オープンしたラウンジです。
+                            洗練された空間で、特別なひとときをお過ごしいただけます。
+                            SYKTSRが運営する新しいフラッグシップ店舗です。
+                        </p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                            <i class="fab fa-instagram mr-2"></i> Instagram
+                        </a>
+                        <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                            <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-brand-secondary">所在地:</strong><br>
+                                福岡市博多区中洲2-6-12<br>第5ラインビル2F
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-16 border-gray-200">
+
+            <!-- 採用情報 (KING) -->
+            <div class="bg-brand-light rounded-lg shadow-xl p-8 md:p-12 border border-gray-200 max-w-4xl mx-auto scroll-animate" style="transition-delay: 0.2s;">
+                <h3 class="text-3xl font-bold text-center text-brand-secondary mb-10">RECRUIT</h3>
+                <div class="bg-white rounded-lg max-w-2xl mx-auto p-6">
+                    <span class="inline-block bg-brand-primary text-white text-sm font-bold px-3 py-1 rounded-full mb-4">飲食部門</span>
+                    <h3 class="text-2xl font-bold text-brand-secondary mb-2">Lounge KING キャスト <span class="text-base text-brand-primary">(急募)</span></h3>
+                    <p class="text-slate-500 mb-4">新規オープンのラウンジで、オープニングスタッフとして活躍しませんか？</p>
+                    <ul class="text-slate-600 list-disc list-inside space-y-2">
+                        <li><strong class="text-brand-secondary">勤務地:</strong> Lounge KING (中洲)</li>
+                        <li><strong class="text-brand-secondary">募集職種:</strong> フロアキャスト</li>
+                        <li><strong class="text-brand-secondary">待遇:</strong> 経験・能力を考慮の上、優遇いたします。</li>
+                    </ul>
+                    <div class="text-center mt-6">
+                         <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-10 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="contact">
+                            応募・お問い合わせ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. 提携企業 (PARTNERS) ===== -->
+        <section id="partners" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">提携企業</h2>
+            <div class="text-center max-w-xl mx-auto bg-brand-light p-12 rounded-lg shadow-xl border scroll-animate" style="transition-delay: 0.1s;">
+                <i class="fas fa-info-circle text-4xl text-brand-primary mb-6"></i>
+                <h3 class="text-2xl font-bold text-brand-secondary mb-4">現在準備中です</h3>
+                <p class="text-slate-600">
+                    Reunite Groupと提携している企業様の情報を掲載予定です。
+                    今しばらくお待ちください。
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== 6. メディア出演 (MEDIA) ===== -->
+        <section id="media" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">メディア出演</h2>
+            <div class="text-center max-w-xl mx-auto bg-brand-light p-12 rounded-lg shadow-xl border scroll-animate" style="transition-delay: 0.1s;">
+                <i class="fas fa-tv text-4xl text-brand-primary mb-6"></i>
+                <h3 class="text-2xl font-bold text-brand-secondary mb-4">現在準備中です</h3>
+                <p class="text-slate-600">
+                    テレビ、雑誌、ウェブメディア等でご紹介いただいた実績を掲載予定です。
+                    今しばらくお待ちください。
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ===== 7. お問い合わせ (CONTACT) ===== -->
+        <section id="contact" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-6 text-brand-secondary scroll-animate">CONTACT</h2>
+            <p class="text-center text-lg text-slate-600 max-w-2xl mx-auto mb-16 scroll-animate" style="transition-delay: 0.1s;">
+                グループへのお問い合わせ、採用へのご応募、その他ご相談はこちらのフォームよりご連絡ください。
+            </p>
+
+            <form action="#" method="POST" class="max-w-2xl mx-auto bg-brand-light p-8 rounded-lg shadow-xl border border-gray-200 space-y-6 scroll-animate" style="transition-delay: 0.2s;">
+                <div>
+                    <label for="name" class="block text-sm font-bold text-slate-700 mb-2">お名前 *</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="例: 山田 太郎">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-bold text-slate-700 mb-2">メールアドレス *</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="example@reunite-group.com">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-bold text-slate-700 mb-2">電話番号</label>
+                    <input type="tel" id="phone" name="phone" class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="090-1234-5678">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-bold text-slate-700 mb-2">件名 *</label>
+                    <select id="subject" name="subject" required class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                        <option value="">選択してください</option>
+                        <option value="採用について">採用について (飲食部門)</option>
+                        <option value="採用について">採用について (美容・整体部門)</option>
+                        <option value="事業について">事業について（SYKTSR）</option>
+                        <option value="事業について">事業について（FNDR）</option>
+                        <option value="事業について">事業について（KING）</option>
+                        <option value="提携について">提携について</option>
+                        <option value="メディアについて">メディア・取材について</option>
+                        <option value="その他">その他のお問い合わせ</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-bold text-slate-700 mb-2">お問い合わせ内容 *</label>
+                    <textarea id="message" name="message" rows="6" required class="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 text-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="お問い合わせ内容をご入力ください..."></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="w-full md:w-auto bg-brand-primary text-white font-bold py-3 px-10 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
+                        送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ===== フッター ===== -->
+    <footer class="bg-slate-800 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- ロゴ・会社情報 -->
+                <div>
+                    <h5 class="text-xl font-bold text-white mb-4">Reunite Group</h5>
+                    <p class="mb-4">
+                        合同会社SYKTSR<br>
+                        株式会社フナドリ
+                    </p>
+                    <p><i class="fas fa-map-marker-alt w-5"></i> 〒810-0041<br>福岡県福岡市中央区大名1-11-27</p>
+                </div>
+                
+                <!-- サイトマップ -->
+                <div>
+                    <h5 class="text-lg font-bold text-white mb-4">SITEMAP</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="home">ホーム</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="syktsr">SYKTSR</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="fndr">FNDR</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="king">KING</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="partners">提携企業</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="media">メディア出演</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+
+                <!-- 事業所 -->
+                <div>
+                    <h5 class="text-lg font-bold text-white mb-4">BUSINESS</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="syktsr">合同会社SYKTSR</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="fndr">株式会社フナドリ</a></li>
+                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="king">Lounge KING</a></li>
+                    </ul>
+                </div>
+
+                <!-- お問い合わせ -->
+                <div>
+                    <h5 class="text-lg font-bold text-white mb-4">CONTACT</h5>
+                    <p class="mb-4">
+                        <i class="fas fa-phone-alt w-5"></i> <a href="tel:070-1276-6232" class="hover:text-brand-teal">070-1276-6232</a> (代表)
+                    </p>
+                    <!-- SNSリンク (仮) -->
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Instagram" class="text-2xl hover:text-brand-teal transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <!-- 他のSNSがあればここに追加 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- コピーライト -->
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="current-year"></span> Reunite Group (SYKTSR LLC. / Funadori Inc.) All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
+
