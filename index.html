@@ -37,7 +37,6 @@
                     transitionTimingFunction: {
                         'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
                     },
-                    // ===== 修正箇所 (アニメーション定義の追加) =====
                     animation: {
                         'scroll-down': 'scroll-down 2s ease-in-out infinite',
                     },
@@ -48,7 +47,6 @@
                             '100%': { transform: 'translateY(10px)', opacity: '0' },
                         }
                     }
-                    // ===== 修正ここまで =====
                 },
             },
         };
@@ -61,19 +59,21 @@
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- ロゴ -->
-                <a href="#" class="text-2xl font-black text-brand-primary nav-link" data-page="home">
+                <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                <a href="#home" class="text-2xl font-black text-brand-primary nav-link" data-page="home">
                     Reunite Group
                 </a>
                 
                 <!-- PC向けナビゲーション -->
                 <div class="hidden md:flex space-x-4 lg:space-x-6">
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="home">ホーム</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="syktsr">SYKTSR</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="fndr">FNDR</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="king">KING</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="partners">提携企業</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="media">メディア出演</a>
-                    <a href="#" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="contact">お問い合わせ</a>
+                    <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                    <a href="#home" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="home">ホーム</a>
+                    <a href="#syktsr" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="syktsr">SYKTSR</a>
+                    <a href="#fndr" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="fndr">FNDR</a>
+                    <a href="#king" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="king">KING</a>
+                    <a href="#partners" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="partners">提携企業</a>
+                    <a href="#media" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="media">メディア出演</a>
+                    <a href="#contact" class="nav-link text-slate-600 hover:text-brand-primary font-medium transition duration-300" data-page="contact">お問い合わせ</a>
                 </div>
 
                 <!-- ハンバーガーボタン (モバイル) -->
@@ -87,13 +87,14 @@
 
         <!-- モバイルメニュー -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-lg flex flex-col justify-center items-center space-y-8 text-2xl z-40">
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="home">ホーム</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="syktsr">SYKTSR</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="fndr">FNDR</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="king">KING</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="partners">提携企業</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="media">メディア出演</a>
-            <a href="#" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="contact">お問い合わせ</a>
+            <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+            <a href="#home" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="home">ホーム</a>
+            <a href="#syktsr" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="syktsr">SYKTSR</a>
+            <a href="#fndr" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="fndr">FNDR</a>
+            <a href="#king" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="king">KING</a>
+            <a href="#partners" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="partners">提携企業</a>
+            <a href="#media" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="media">メディア出演</a>
+            <a href="#contact" class="nav-link text-brand-secondary hover:text-brand-primary transition duration-300" data-page="contact">お問い合わせ</a>
         </div>
     </header>
 
@@ -115,27 +116,18 @@
                     <h2 class="hero-animate text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight" style="animation-delay: 0.5s;">
                         再び集う・繋がる。<br>"あなたらしさ"の創出へ
                     </h2>
-                    
-                    <!-- ===== 削除: ボタン ===== -->
-                    <!-- 
-                    <a href="#" class="nav-link hero-animate ...">
-                        事業内容を見る
-                    </a>
-                    -->
                 </div>
 
-                <!-- ===== 追加: スクロールダウンインジケーター ===== -->
+                <!-- スクロールダウンインジケーター -->
                 <div class="hero-animate absolute bottom-12 left-1/2 -translate-x-1/2 z-20" style="animation-delay: 1.2s;">
                     <div class="w-8 h-14 border-2 border-white/60 rounded-full flex justify-center items-start pt-2.5">
-                        <!-- アニメーションするドット -->
                         <div class="w-2 h-3 bg-white rounded-full animate-scroll-down"></div>
                     </div>
                 </div>
-                <!-- ===== 追加ここまで ===== -->
 
             </div>
 
-            <!-- ===== 新規追加: Reunite Groupとはセクション ===== -->
+            <!-- Reunite Groupとはセクション -->
             <div class="bg-white py-16 sm:py-24">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
                     <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">Reunite Groupとは</h2>
@@ -160,7 +152,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ===== 新規追加ここまで ===== -->
 
 
             <!-- 事業紹介セクション -->
@@ -169,7 +160,7 @@
                     <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">OUR BUSINESS</h2>
                     <div class="grid grid-cols-1 gap-12">
                         
-                        <!-- 飲食事業 (詳細カード) - ※ボタン追加対象外 -->
+                        <!-- 飲食事業 (詳細カード) -->
                         <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate">
                             <div class="flex flex-col md:flex-row">
                                 <!-- Image Column -->
@@ -184,14 +175,15 @@
                                     <p class="text-slate-600 mb-8 text-lg">
                                         福岡・中洲と大名エリアで、バーやラウンジを運営。多様な人々が集い、語らえる「憩いの空間」を提供します。
                                     </p>
-                                    <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="syktsr">
+                                    <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                                    <a href="#syktsr" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="syktsr">
                                         SYKTSRの詳細を見る <i class="fas fa-arrow-right ml-1"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 美容・整体事業 (詳細カード) - ※ボタン追加対象外 -->
+                        <!-- 美容・整体事業 (詳細カード) -->
                         <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.2s;">
                             <div class="flex flex-col md:flex-row">
                                 <!-- Image Column -->
@@ -206,7 +198,8 @@
                                     <p class="text-slate-600 mb-8 text-lg">
                                         深夜3時まで営業する「ReaLize施術院」を運営。多忙な現代人の心と体を根本から整えます。
                                     </p>
-                                    <a href="#" class="nav-link inline-block bg-brand-teal text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-teal-700 transition duration-300" data-page="fndr">
+                                    <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                                    <a href="#fndr" class="nav-link inline-block bg-brand-teal text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-teal-700 transition duration-300" data-page="fndr">
                                         FNDRの詳細を見る <i class="fas fa-arrow-right ml-1"></i>
                                     </a>
                                 </div>
@@ -216,33 +209,12 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ===== 削除: 理念セクション ===== -->
-            <!-- 
-            <div class="bg-white py-16 sm:py-24">
-                ... (理念セクションのコード) ...
-            </div>
-            -->
-
-            <!-- ===== 削除: 代表挨拶 (ホームから移動) ===== -->
-            <!-- 
-            <div class="bg-brand-light py-16 sm:py-24">
-                ... (代表挨拶のコード) ...
-            </div>
-            -->
         </section>
 
         <!-- ===== 2. SYKTSR ===== -->
         <section id="syktsr" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
             <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">合同会社SYKTSR</h2>
             
-            <!-- ===== 削除済み ===== -->
-            <!-- 
-            <p class="text-center text-lg text-slate-600 max-w-3xl mx-auto mb-16 scroll-animate" style="transition-delay: 0.1s;">
-                ...
-            </p>
-            -->
-
             <!-- 会社概要 (SYKTSR) -->
             <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 border border-gray-200 mb-16 max-w-3xl mx-auto scroll-animate" style="transition-delay: 0.2s;">
                 <h4 class="text-2xl font-bold text-brand-primary mb-6">会社概要</h4>
@@ -415,10 +387,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ===== 削除済み ===== -->
-            <!-- 
-            <p class="text-center mt-8 text-slate-500 scroll-animate" style="transition-delay: 0.7s;">(※ Lounge KINGはKINGページに記載)</p>
-            -->
         </section>
 
 
@@ -570,7 +538,8 @@
                             <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
                                 <i class="fab fa-instagram mr-2"></i> Instagram
                             </a>
-                            <a href="#" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="contact">
+                            <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                            <a href="#contact" class="nav-link inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300" data-page="contact">
                                 サービスについて問い合わせる
                             </a>
                         </div>
@@ -578,49 +547,33 @@
                 </div>
 
             </div>
-            
-            <!-- ===== 削除済み ===== -->
-            <!-- 
-            <hr class="my-16 border-gray-200">
-            -->
-            <!-- 採用情報 (FNDR) -->
-            <!-- 
-            <div class="bg-white rounded-lg shadow-xl p-8 border border-gray-200 scroll-animate" style="transition-delay: 0.5s;">
-                ... (採用情報 FNDR) ...
-            </div>
-            -->
-
         </section>
 
         <!-- ===== 4. KING ===== -->
-        <!-- ===== ★★★ 変更箇所 (KINGセクション) ★★★ ===== -->
         <section id="king" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-            <!-- H2タイトル変更 -->
             <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">KING</h2>
 
-            <!-- 店舗情報をグリッドで囲む (3カラム) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 
                 <!-- 店舗情報 (Lounge KING) -->
                 <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.1s;">
-                    <!-- 縦積みに変更 -->
                     <div class="flex flex-col h-full">
                         <!-- Image Column -->
                         <div class="w-full overflow-hidden">
                             <img src="img/shop-king.png" alt="[Lounge KINGのイメージ画像]" class="w-full h-64 object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
                         </div>
-                        <!-- Details Column (flex-growで高さを揃える) -->
+                        <!-- Details Column -->
                         <div class="w-full p-8 md:p-10 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold text-brand-secondary mb-4">Lounge KING <span class="text-lg bg-brand-primary text-white font-bold px-3 py-1 rounded ml-2">NEW</span></h3>
-                            <p class="text-slate-600 mb-4 text-base flex-grow"> <!-- flex-grow を追加 -->
+                            <p class="text-slate-600 mb-4 text-base flex-grow">
                                 中洲に新規オープンしたラウンジです。
                                 洗練された空間で、特別なひとときをお過ごしいただけます。
                                 SYKTSRが運営する新しいフラッグシップ店舗です。
                             </p>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6 mt-auto"> <!-- mt-auto を追加 -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6 mt-auto">
                                 <i class="fab fa-instagram mr-2"></i> Instagram
                             </a>
-                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto"> <!-- mt-auto を追加 -->
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto">
                                 <p class="text-slate-700 text-base"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-brand-secondary">所在地:</strong><br>
                                     福岡市博多区中洲2-6-12<br>第5ラインビル2F
                                 </p>
@@ -634,25 +587,24 @@
                     <div class="flex flex-col h-full">
                         <!-- Image Column -->
                         <div class="w-full overflow-hidden">
-                            <!-- プレースホルダー画像 -->
                             <div class="w-full h-64 bg-slate-200 flex items-center justify-center">
                                  <i class="fas fa-store text-6xl text-slate-400"></i>
                             </div>
                         </div>
-                        <!-- Details Column (flex-growで高さを揃える) -->
+                        <!-- Details Column -->
                         <div class="w-full p-8 md:p-10 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold text-brand-secondary mb-4">新規店舗 (準備中)</h3>
-                            <p class="text-slate-600 mb-4 text-base flex-grow"> <!-- flex-grow を追加 -->
+                            <p class="text-slate-600 mb-4 text-base flex-grow">
                                 KING事業部の新しい店舗がオープン予定です。
                                 詳細が決まり次第、情報を更新いたします。
                             </p>
-                             <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-300 text-white font-bold py-3 px-5 rounded-lg text-base transition duration-300 mb-6 mt-auto cursor-not-allowed"> <!-- mt-auto を追加 -->
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-300 text-white font-bold py-3 px-5 rounded-lg text-base transition duration-300 mb-6 mt-auto cursor-not-allowed">
                                 <i class="fab fa-instagram mr-2"></i> Instagram (準備中)
                             </a>
-                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto"> <!-- mt-auto を追加 -->
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto">
                                 <p class="text-slate-700 text-base"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-brand-secondary">所在地:</strong><br>
                                     近日公開予定
-                                    <br><br> <!-- 高さを合わせる -->
+                                    <br><br>
                                 </p>
                             </div>
                         </div>
@@ -664,44 +616,31 @@
                     <div class="flex flex-col h-full">
                         <!-- Image Column -->
                         <div class="w-full overflow-hidden">
-                            <!-- プレースホルダー画像 -->
                             <div class="w-full h-64 bg-slate-200 flex items-center justify-center">
                                  <i class="fas fa-store text-6xl text-slate-400"></i>
                             </div>
                         </div>
-                        <!-- Details Column (flex-growで高さを揃える) -->
+                        <!-- Details Column -->
                         <div class="w-full p-8 md:p-10 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold text-brand-secondary mb-4">新規店舗 (準備中)</h3>
-                            <p class="text-slate-600 mb-4 text-base flex-grow"> <!-- flex-grow を追加 -->
+                            <p class="text-slate-600 mb-4 text-base flex-grow">
                                 KING事業部の新しい店舗がオープン予定です。
                                 詳細が決まり次第、情報を更新いたします。
                             </p>
-                             <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-300 text-white font-bold py-3 px-5 rounded-lg text-base transition duration-300 mb-6 mt-auto cursor-not-allowed"> <!-- mt-auto を追加 -->
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-300 text-white font-bold py-3 px-5 rounded-lg text-base transition duration-300 mb-6 mt-auto cursor-not-allowed">
                                 <i class="fab fa-instagram mr-2"></i> Instagram (準備中)
                             </a>
-                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto"> <!-- mt-auto を追加 -->
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto">
                                 <p class="text-slate-700 text-base"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-brand-secondary">所在地:</strong><br>
                                     近日公開予定
-                                    <br><br> <!-- 高さを合わせる -->
+                                    <br><br>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div> <!-- grid end -->
-
-            <!-- HRと採用セクション削除 -->
-            <!-- 
-            <hr class="my-16 border-gray-200">
-            -->
-            <!-- 採用情報 (KING) -->
-            <!--
-            <div class="bg-brand-light rounded-lg shadow-xl p-8 md:p-12 border border-gray-200 max-w-4xl mx-auto scroll-animate" style="transition-delay: 0.2s;">
-                ... (採用情報 KING) ...
-            </div>
-            -->
         </section>
-        <!-- ===== 変更ここまで ===== -->
 
         <!-- ===== 5. 提携企業 (PARTNERS) ===== -->
         <section id="partners" class="page-section hidden container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -796,13 +735,14 @@
                 <div>
                     <h5 class="text-lg font-bold text-white mb-4">SITEMAP</h5>
                     <ul class="space-y-2">
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="home">ホーム</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="syktsr">SYKTSR</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="fndr">FNDR</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="king">KING</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="partners">提携企業</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="media">メディア出演</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="contact">お問い合わせ</a></li>
+                        <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                        <li><a href="#home" class="nav-link hover:text-brand-teal" data-page="home">ホーム</a></li>
+                        <li><a href="#syktsr" class="nav-link hover:text-brand-teal" data-page="syktsr">SYKTSR</a></li>
+                        <li><a href="#fndr" class="nav-link hover:text-brand-teal" data-page="fndr">FNDR</a></li>
+                        <li><a href="#king" class="nav-link hover:text-brand-teal" data-page="king">KING</a></li>
+                        <li><a href="#partners" class="nav-link hover:text-brand-teal" data-page="partners">提携企業</a></li>
+                        <li><a href="#media" class="nav-link hover:text-brand-teal" data-page="media">メディア出演</a></li>
+                        <li><a href="#contact" class="nav-link hover:text-brand-teal" data-page="contact">お問い合わせ</a></li>
                     </ul>
                 </div>
 
@@ -810,9 +750,10 @@
                 <div>
                     <h5 class="text-lg font-bold text-white mb-4">BUSINESS</h5>
                     <ul class="space-y-2">
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="syktsr">合同会社SYKTSR</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="fndr">株式会社フナドリ</a></li>
-                        <li><a href="#" class="nav-link hover:text-brand-teal" data-page="king">Lounge KING</a></li>
+                        <!-- ===== ★★★ 変更 (href) ★★★ ===== -->
+                        <li><a href="#syktsr" class="nav-link hover:text-brand-teal" data-page="syktsr">合同会社SYKTSR</a></li>
+                        <li><a href="#fndr" class="nav-link hover:text-brand-teal" data-page="fndr">株式会社フナドリ</a></li>
+                        <li><a href="#king" class="nav-link hover:text-brand-teal" data-page="king">Lounge KING</a></li>
                     </ul>
                 </div>
 
@@ -825,7 +766,6 @@
                     <!-- SNSリンク (仮) -->
                     <div class="flex space-x-4">
                         <a href="#" aria-label="Instagram" class="text-2xl hover:text-brand-teal transition duration-300"><i class="fab fa-instagram"></i></a>
-                        <!-- 他のSNSがあればここに追加 -->
                     </div>
                 </div>
             </div>

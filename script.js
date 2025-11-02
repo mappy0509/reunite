@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const navLinks = document.querySelectorAll('.nav-link');
     const pages = document.querySelectorAll('.page-section');
     const header = document.querySelector('header');
-    // ヘッダーの高さを取得 (デフォルト80px)
-    const headerHeight = header ? header.offsetHeight : 80; 
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let observer;
 
     // ページ表示を管理する関数
     function showPage(pageId) {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // 対象のページを表示
         const targetPage = document.getElementById(pageId);
+        
         if (targetPage) {
             targetPage.classList.remove('hidden');
             // ページの先頭にスクロール
@@ -27,26 +29,58 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             // 新しいページのアニメーション要素をトリガー
             triggerScrollAnimations(targetPage);
+        } else {
+            // もしIDが見つからなければ、homeを表示 (フォールバック)
+            const homePage = document.getElementById('home');
+            if (homePage) {
+                homePage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+                triggerScrollAnimations(homePage);
+            }
         }
 
         // モバイルメニューを閉じる
-        document.getElementById('mobile-menu').classList.add('hidden');
-        document.getElementById('hamburger-btn').classList.remove('mobile-menu-open');
+        mobileMenu.classList.add('hidden');
+        hamburgerBtn.classList.remove('mobile-menu-open');
     }
 
-    // ナビリンクのクリックイベント
+    // ===== ★★★ 新規: ルーティング処理 (Hash変更) ★★★ =====
+    // URLのハッシュ（#）に基づいてページを表示する関数
+    function handleRouteChange() {
+        // URLのハッシュを取得 (例: #syktsr -> syktsr)
+        let pageId = location.hash.substring(1);
+        
+        // ハッシュがない場合 (初期ロード時など) は 'home' をデフォルトにする
+        if (!pageId) {
+            pageId = 'home';
+        }
+        
+        showPage(pageId);
+    }
+    // ===== ★★★ 変更ここまで ★★★ =====
+
+
+    // ===== ★★★ 変更: ナビリンクのクリックイベント ★★★ =====
+    // (e.preventDefault() を使って、デフォルトのアンカー動作を止める)
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // 必須: ページ内スクロールを無効化
             const pageId = link.dataset.page;
-            showPage(pageId);
+            
+            // URLのハッシュを更新 (これにより 'hashchange' イベントが発火する)
+            // ただし、現在のハッシュと同じ場合は発火しないので、手動で showPage を呼ぶ
+            if (location.hash !== `#${pageId}`) {
+                location.hash = pageId;
+            } else {
+                // すでに同じハッシュの場合 (例: モバイルメニューで同じページを再クリック)
+                // hashchangeイベントが発火しないので、手動でshowPageを呼んでメニューを閉じる
+                showPage(pageId);
+            }
         });
     });
+    // ===== ★★★ 変更ここまで ★★★ =====
 
     // ===== ハンバーガーメニュー機能 =====
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
     hamburgerBtn.addEventListener('click', () => {
         hamburgerBtn.classList.toggle('mobile-menu-open');
         mobileMenu.classList.toggle('hidden');
@@ -60,8 +94,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // ===== スクロールアニメーション機能 =====
-    let observer;
-
     function setupIntersectionObserver() {
         const options = {
             root: null, // ビューポートを基準
@@ -98,8 +130,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // ===== 初期表示 =====
+    // ===== ★★★ 変更: 初期表示処理 ★★★ =====
     setupIntersectionObserver();
-    // 初期表示時に'home'をアクティブにする
-    showPage('home');
+    
+    // ブラウザの「戻る」「進む」ボタン（hashchangeイベント）をリッスン
+    window.addEventListener('hashchange', handleRouteChange);
+
+    // ページロード時に現在のハッシュに基づいてページを表示
+    handleRouteChange();
+    // ===== ★★★ 変更ここまで =====
 });
