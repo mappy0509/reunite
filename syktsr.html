@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同会社SYKTSR - Reunite Group</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
+                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
+                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
+                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
+                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
+                    },
+                    transitionTimingFunction: {
+                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    animation: {
+                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-down': {
+                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(10px)', opacity: '0' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-white text-brand-secondary font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section id="syktsr" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">合同会社SYKTSR</h2>
+            
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 border border-gray-200 mb-16 max-w-3xl mx-auto scroll-animate" style="transition-delay: 0.2s;">
+                <h4 class="text-2xl font-bold text-brand-primary mb-6">会社概要</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-slate-600">
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">会社名</th>
+                                <td class="py-3">合同会社SYKTSR</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">設立</th>
+                                <td class="py-3">2024年3月13日</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">所在地</th>
+                                <td class="py-3">福岡県福岡市中央区大名1丁目11-27</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">資本金</th>
+                                <td class="py-3">10万円</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">代表者</th>
+                                <td class="py-3">代表社員 松浦颯汰</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">従業員数</th>
+                                <td class="py-3">4名（社員：3名）</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">売上高</th>
+                                <td class="py-3">8100万円</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">事業内容</th>
+                                <td class="py-3">飲食店事業（大名1店舗・中洲2店舗）</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pt-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">関連会社</th>
+                                <td class="pt-3">株式会社フナドリ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr class="my-8 border-gray-200">
+
+                <h4 class="text-2xl font-bold text-brand-primary mb-6">会社沿革</h4>
+                <ul class="space-y-2 text-slate-600 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">2024年3月</span>
+                        <span>合同会社SYKTSRを設立</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">2024年3月</span>
+                        <span>Bar方舟を営業開始</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">2024年7月</span>
+                        <span>Bar Cielを営業開始</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">2025年3月</span>
+                        <span>Bar Polarを営業開始</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 mb-16 scroll-animate" style="transition-delay: 0.25s;">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <img src="img/portrait-matsuura.png" alt="[代表 松浦颯汰氏のポートレート]" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto shadow-lg border-4 border-brand-primary">
+                        <h4 class="text-xl font-bold mt-4 text-brand-secondary">松浦 颯汰</h4>
+                        <p class="text-brand-primary font-medium">Reunite Group 会長<br>合同会社SYKTSR 代表</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-brand-secondary mb-4">ご挨拶</h3>
+                        <p class="text-slate-600 leading-relaxed space-y-4">
+                            私たちSYKTSRは、福岡を中心に、幅広い年代の方々が集い、語らい、憩える「場」を提供することを目指し、飲食をはじめとした事業を展開しています。<br><br>
+                            私は、昔から「1人で悩むより、誰かと語り合える時間」が好きで、そんな“つながり”が生まれる空間をもっと広げたいという想いから、この会社を立ち上げました。<br><br>
+                            私たちの理念は「桜梅桃李（おうばいとうり）」<br>
+                            桜も梅も桃も李（すもも）も、それぞれが違う色や香りを持つように、一人ひとりの個性や価値観が自然に尊重される場所を大切にしています。<br><br>
+                            現在は、昼の会社のFNDRでは整体や心身のケアも取り入れ、“癒し”や“整う”というキーワードも重ねながら、今後は福岡から全国へ、美容や飲食など多分野へと展開していく予定です。<br><br>
+                            SYKTSRが、誰かにとっての「帰れる場所」「自分らしくいられる時間」になれたら嬉しいです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold text-center mb-10 text-brand-secondary scroll-animate" style="transition-delay: 0.3s;">SHOPS</h3>
+            <div class="grid grid-cols-1 gap-12">
+                
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.4s;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/hakobune.jpg" alt="Bar方舟 ロゴ" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar方舟 (ハコブネ)</h3>
+                            <p class="text-slate-600 mb-4">
+                                大名に位置する落ち着いた雰囲気のバー。
+                                多彩なドリンクと共に、ゆったりとした時間をお過ごしいただけます。
+                                まさに都会の「方舟」のような、心安らぐ空間です。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市中央区大名1-11-27</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>20:00 〜 5:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.5s;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/ciel.jpg" alt="Bar Ciel ロゴ" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar Ciel (シエル)</h3>
+                            <p class="text-slate-600 mb-4">
+                                中洲の喧騒を忘れさせる、地下に佇む隠れ家。
+                                「Ciel（空）」の名のように、開放的な気分で朝まで楽しめる空間です。
+                                深夜24時から朝8時まで営業しています。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市博多区中洲3-4-5 多門通りB1F</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>24:00 〜 8:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.6s;">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 overflow-hidden">
+                            <img src="img/polar.jpg" alt="Bar Polar ロゴ" class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">Bar Polar (ポーラー)</h3>
+                            <p class="text-slate-600 mb-4">
+                                中洲の中心部に位置し、洗練された大人の時間を過ごせるバー。
+                                「北極星」のように、いつでも変わらずそこにある安心感を提供します。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市博多区中洲4-2-16 RBコア中洲4-A</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>22:00 〜 5:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

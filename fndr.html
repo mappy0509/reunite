@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社フナドリ (FNDR) - Reunite Group</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
+                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
+                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
+                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
+                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
+                    },
+                    transitionTimingFunction: {
+                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    animation: {
+                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-down': {
+                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(10px)', opacity: '0' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-white text-brand-secondary font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section id="fndr" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">株式会社フナドリ (FNDR)</h2>
+
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 border border-gray-200 mb-16 max-w-3xl mx-auto scroll-animate" style="transition-delay: 0.1s;">
+                <h4 class="text-2xl font-bold text-brand-teal mb-6">会社概要</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-slate-600">
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">会社名</th>
+                                <td class="py-3">株式会社フナドリ</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">設立</th>
+                                <td class="py-3">2025年4月17日</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">所在地</th>
+                                <td class="py-3">福岡県福岡市中央区大名1丁目11-27-106</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">資本金</th>
+                                <td class="py-3">77万円</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">代表者</th>
+                                <td class="py-3">代表取締役社長：有働嵐</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">役員</th>
+                                <td class="py-3">取締役員：松浦颯汰</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">従業員数</th>
+                                <td class="py-3">2名</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">売上高</th>
+                                <td class="py-3">70万円</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <th scope="row" class="py-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">事業内容</th>
+                                <td class="py-3">施術院（マッサージ）／営業代行</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="pt-3 pr-4 font-medium text-brand-secondary whitespace-nowrap w-1/3 md:w-1/4">関連会社</th>
+                                <td class="pt-3">合同会社SYKTSR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr class="my-8 border-gray-200">
+
+                <h4 class="text-2xl font-bold text-brand-teal mb-6">会社沿革</h4>
+                <ul class="space-y-2 text-slate-600 list-none pl-0">
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">2025年4月</span>
+                        <span>株式会社フナドリを設立</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">6月</span>
+                        <span>Realize施術院開院</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-medium text-brand-secondary w-20 whitespace-nowrap">7月</span>
+                        <span>FN営業代行開業</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 mb-16 scroll-animate" style="transition-delay: 0.2s;">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <img src="img/portrait-udo.png" alt="[代表 有働嵐氏のポートレート]" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover mx-auto shadow-lg border-4 border-brand-teal">
+                        <h4 class="text-xl font-bold mt-4 text-brand-secondary">有働 嵐</h4>
+                        <p class="text-brand-teal font-semibold">株式会社フナドリ 代表取締役</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h4 class="text-2xl font-bold text-slate-800 mb-4">ご挨拶</h4>
+                        <p class="text-slate-700 leading-relaxed space-y-4">
+                            私たちフナドリは、福岡市中央区を拠点に、人々の健康と美容を支える事業を展開しております。その一環として、整体・鍼灸・美容鍼・ルート鍼を提供する施術所「ReaLize施術院」を運営しています。<br><br>
+                            この事業を立ち上げた背景には、私自身の過去の経験があります。以前の仕事では、日々の忙しさに追われ、自分の体に向き合う時間をなかなか持つことができませんでした。<br><br>
+                            疲れや不調を感じても、我慢してやり過ごすことが当たり前で、ケアする時間も場所も見つけられない日々が続いていました。<br><br>
+                            そして、日々の仕事や人との関わりの中で、自身と同じように「体を整えたくても行く時間がない」「夜に開いているところがない」と感じている方が本当に多いことに気づきました。<br><br>
+                            そうした想いから、どんな業種・生活スタイルの方でも無理なく通える場所をつくりたいという考えに至り、「ReaLize施術院」を立ち上げました。<br><br>
+                            ReaLize施術院では、まずはリラクゼーションにとどまらず、根本からの改善を目指した丁寧なカウンセリングと施術を行っています。<br><br>
+                            整体・鍼灸・美容鍼・ルート鍼といった多角的なアプローチで、お一人おひとりの体の状態や目標に合わせたケアを提案しています。<br><br>
+                            「ReaLize」という名前には、「気づき、理解し、自分自身で体を良くしていけるように」という願いを込めています。<br><br>
+                            単に施術を受けるだけではなく、自分の体に向き合うきっかけとなる場所として、多くの方に寄り添っていければと思っています。<br><br>
+                            今後もフナドリは、人の心と体を支えるサービスを通じて、地域社会に貢献してまいります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-16 border-gray-200">
+
+            <div class="grid grid-cols-1 gap-12">
+            
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.3s;">
+                    <h3 class="text-3xl font-bold text-center text-brand-teal pt-10">美容・整体事業 (WELLNESS)</h3>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 overflow-hidden p-8">
+                            <img src="img/realize.jpg" alt="ReaLize施術院 ロゴ" class="rounded-lg shadow-lg w-full h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                        </div>
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h4 class="text-2xl font-bold text-center mb-6 text-slate-800">ReaLize施術院</h4>
+                            <p class="text-slate-700 mb-4 text-lg">
+                                「ReaLize」という名前には、「気づき、理解し、自分自身で体を良くしていけるように」という願いを込めています。
+                                根本からの改善を目指した丁寧なカウンセリングと施術を行います。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
+                                <p class="text-slate-700 mt-2 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-teal"></i> <strong class="text-slate-800">所在地:</strong><br>福岡市中央区大名2-2-2 後藤ビル402</p>
+                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-teal"></i> <strong class="text-slate-800">営業時間:</strong><br>15:00 〜 3:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.4s;">
+                    <h3 class="text-3xl font-bold text-center text-gray-500 pt-10">その他事業 (OTHERS)</h3>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-5/12 overflow-hidden p-8">
+                             <img src="img/business-sales.png" alt="[営業代行のイメージ画像]" class="rounded-lg shadow-lg w-full h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-105">
+                        </div>
+                        <div class="md:w-7/12 p-8 md:p-10">
+                            <h4 class="text-2xl font-bold text-center mb-6 text-slate-800">FN営業代行</h4>
+                            <p class="text-slate-700 mb-4 text-lg">
+                                株式会社フナドリの一部門として、営業代行サービスを提供しています。（2025年7月 開業）
+                                Reunite Groupで培ったノウハウを活かし、クライアント様のビジネス成長を強力にサポートします。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <a href="contact.html" class="inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
+                                サービスについて問い合わせる
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

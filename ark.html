@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK幹細胞クリニック - Reunite Group</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
+                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
+                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
+                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
+                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
+                        // ★★★ ARK用のアクセントカラー (Gold) ★★★
+                        'ark-gold': '#B8860B', 
+                        'ark-light': '#FFFBF0',
+                    },
+                    transitionTimingFunction: {
+                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    animation: {
+                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-down': {
+                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(10px)', opacity: '0' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-white text-brand-secondary font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section id="ark" class="page-section">
+            
+            <div class="relative bg-ark-light py-24 sm:py-32 flex items-center justify-center text-center overflow-hidden">
+                <div class="relative z-20 p-4 max-w-3xl scroll-animate">
+                    <img src="img/ark.jpg" alt="ARK STEM CELL CLINIC ロゴ" class="w-full max-w-md mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-ark-gold mt-8 tracking-tight leading-tight">
+                        未来の健康と美を、再生の力で。
+                    </h2>
+                    <p class="text-lg text-brand-secondary mt-6 max-w-2xl mx-auto">
+                        ARK幹細胞クリニックは、先進の再生医療技術を用い、
+                        あなた自身の細胞が持つ「修復する力」を最大限に引き出します。
+                        身体の内側から輝く、根本的なエイジングケアと健康をご提供します。
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">CONCEPT</h2>
+                    
+                    <div class="text-lg text-slate-600 leading-relaxed space-y-6 scroll-animate" style="transition-delay: 0.2s;">
+                        <p>
+                            私たちのクリニックが目指すのは、一時的な対症療法ではありません。
+                            幹細胞治療（自己脂肪由来幹細胞）をはじめとする再生医療は、加齢やダメージによって失われた組織の機能を回復させ、身体が本来持つ「再生能力」を呼び覚ます最先端の医療です。
+                        </p>
+                        <p>
+                            「ARK」の名は「方舟」を意味します。
+                            様々なストレスや環境の変化という荒波を乗り越え、皆様の健康と美を未来へと運ぶ「方舟」でありたい。
+                            私たちはそう願っています。
+                        </p>
+                        <p>
+                            Reunite Groupの一員として、心と身体、そして未来を再びつなぐ（Reunite）ため、最高水準の医療サービスを提供することをお約束します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-light py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">TREATMENT</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 scroll-animate" style="transition-delay: 0.1s;">
+                            <i class="fas fa-hand-sparkles text-4xl text-ark-gold mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">美容・エイジングケア</h3>
+                            <p class="text-slate-600">
+                                肌の再生（しわ・たるみ改善）、トータル・エイジングケア、美白・肌質改善など、内側から輝く若々しさへ導きます。
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 scroll-animate" style="transition-delay: 0.2s;">
+                            <i class="fas fa-shield-alt text-4xl text-ark-gold mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">健康維持・予防</h3>
+                            <p class="text-slate-600">
+                                免疫機能の向上、疲労回復、身体機能の回復支援など。病気になりにくい、活力ある身体づくりをサポートします。
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200 scroll-animate" style="transition-delay: 0.3s;">
+                            <i class="fas fa-bone text-4xl text-ark-gold mb-4"></i>
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">専門治療</h3>
+                            <p class="text-slate-600">
+                                関節痛（変形性膝関節症など）の改善、スポーツ障害からの回復支援など、専門的なお悩みにも対応します。
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white py-16 sm:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">CLINIC INFO</h2>
+                    
+                    <div class="bg-brand-light rounded-lg shadow-lg border border-gray-200 overflow-hidden scroll-animate" style="transition-delay: 0.2s;">
+                        <table class="w-full text-left text-slate-600 text-lg">
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <th scope="row" class="py-5 px-6 font-medium text-brand-secondary w-1/3">クリニック名</th>
+                                    <td class="py-5 px-6">ARK幹細胞クリニック (ARK STEM CELL CLINIC)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <th scope="row" class="py-5 px-6 font-medium text-brand-secondary w-1/3">所在地</th>
+                                    <td class="py-5 px-6">
+                                        〒810-0041<br>
+                                        福岡県福岡市中央区大名（詳細住所は準備中です）
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <th scope="row" class="py-5 px-6 font-medium text-brand-secondary w-1/3">診療時間</th>
+                                    <td class="py-5 px-6">
+                                        近日公開予定<br>
+                                        (完全予約制)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="py-5 px-6 font-medium text-brand-secondary w-1/3">お問い合わせ</th>
+                                    <td class="py-5 px-6">
+                                        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300">
+                                            <i class="fab fa-instagram mr-2"></i> Instagram
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

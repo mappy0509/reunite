@@ -1,99 +1,65 @@
 /* * Reunite Group コーポレートサイト
  * メインスクリプト (script.js)
+ * MPA (Multi-Page Application)
  */
 
 document.addEventListener('DOMContentLoaded', (event) => {
     
-    // ===== ページ切り替え機能 =====
-    const navLinks = document.querySelectorAll('.nav-link');
-    const pages = document.querySelectorAll('.page-section');
-    const header = document.querySelector('header');
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+    // ===== ★★★ 新規: コンポーネント読み込み機能 ★★★ =====
+    
+    // ヘッダー (header.html) を読み込む
+    // 読み込みが完了してから、ハンバーガーメニューのイベントリスナーを設定
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            // id="header-placeholder" の要素にヘッダーを挿入
+            const headerPlaceholder = document.getElementById('header-placeholder');
+            if (headerPlaceholder) {
+                headerPlaceholder.innerHTML = data;
+            }
+
+            // ===== ハンバーガーメニュー機能 (ヘッダー読み込み後に実行) =====
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (hamburgerBtn && mobileMenu) {
+                hamburgerBtn.addEventListener('click', () => {
+                    hamburgerBtn.classList.toggle('mobile-menu-open');
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        })
+        .catch(error => console.error('Error loading header:', error));
+
+    // フッター (footer.html) を読み込む
+    // 読み込みが完了してから、コピーライト年の更新を実行
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            // id="footer-placeholder" の要素にフッターを挿入
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            if (footerPlaceholder) {
+                footerPlaceholder.innerHTML = data;
+            }
+
+            // ===== コピーライトの年を自動更新 (フッター読み込み後に実行) =====
+            const currentYearEl = document.getElementById('current-year');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+        })
+        .catch(error => console.error('Error loading footer:', error));
+
+    // ===== ★★★ 削除: ページ切り替え機能 (SPAロジック) ★★★ =====
+    // navLinks, pages, showPage(), handleRouteChange(), navLinks.forEach(), 'hashchange'イベントリスナー
+    // はすべて不要になったため削除。
+
+    
+    // ===== スクロールアニメーション機能 =====
+    // (SPAの時と異なり、ページロード時に一度だけ実行すれば良い)
+    
     let observer;
 
-    // ページ表示を管理する関数
-    function showPage(pageId) {
-        // 全てのページを非表示
-        pages.forEach(page => {
-            page.classList.add('hidden');
-        });
-
-        // 対象のページを表示
-        const targetPage = document.getElementById(pageId);
-        
-        if (targetPage) {
-            targetPage.classList.remove('hidden');
-            // ページの先頭にスクロール
-            window.scrollTo(0, 0);
-
-            // 新しいページのアニメーション要素をトリガー
-            triggerScrollAnimations(targetPage);
-        } else {
-            // もしIDが見つからなければ、homeを表示 (フォールバック)
-            const homePage = document.getElementById('home');
-            if (homePage) {
-                homePage.classList.remove('hidden');
-                window.scrollTo(0, 0);
-                triggerScrollAnimations(homePage);
-            }
-        }
-
-        // モバイルメニューを閉じる
-        mobileMenu.classList.add('hidden');
-        hamburgerBtn.classList.remove('mobile-menu-open');
-    }
-
-    // ===== ★★★ 新規: ルーティング処理 (Hash変更) ★★★ =====
-    // URLのハッシュ（#）に基づいてページを表示する関数
-    function handleRouteChange() {
-        // URLのハッシュを取得 (例: #syktsr -> syktsr)
-        let pageId = location.hash.substring(1);
-        
-        // ハッシュがない場合 (初期ロード時など) は 'home' をデフォルトにする
-        if (!pageId) {
-            pageId = 'home';
-        }
-        
-        showPage(pageId);
-    }
-    // ===== ★★★ 変更ここまで ★★★ =====
-
-
-    // ===== ★★★ 変更: ナビリンクのクリックイベント ★★★ =====
-    // (e.preventDefault() を使って、デフォルトのアンカー動作を止める)
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // 必須: ページ内スクロールを無効化
-            const pageId = link.dataset.page;
-            
-            // URLのハッシュを更新 (これにより 'hashchange' イベントが発火する)
-            // ただし、現在のハッシュと同じ場合は発火しないので、手動で showPage を呼ぶ
-            if (location.hash !== `#${pageId}`) {
-                location.hash = pageId;
-            } else {
-                // すでに同じハッシュの場合 (例: モバイルメニューで同じページを再クリック)
-                // hashchangeイベントが発火しないので、手動でshowPageを呼んでメニューを閉じる
-                showPage(pageId);
-            }
-        });
-    });
-    // ===== ★★★ 変更ここまで ★★★ =====
-
-    // ===== ハンバーガーメニュー機能 =====
-    hamburgerBtn.addEventListener('click', () => {
-        hamburgerBtn.classList.toggle('mobile-menu-open');
-        mobileMenu.classList.toggle('hidden');
-    });
-    
-    // ===== コピーライトの年を自動更新 =====
-    // id="current-year" が存在する場合のみ実行
-    const currentYearEl = document.getElementById('current-year');
-    if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
-    }
-
-    // ===== スクロールアニメーション機能 =====
     function setupIntersectionObserver() {
         const options = {
             root: null, // ビューポートを基準
@@ -112,17 +78,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // ページ内の.scroll-animate要素を監視する関数
-    function triggerScrollAnimations(container) {
-        // 既存のObserverがあれば切断
-        if (observer) {
-            observer.disconnect();
-        }
-        
+    function initializeScrollAnimations() {
         // Observerをセットアップ
         setupIntersectionObserver();
         
-        // コンテナ内のアニメーション対象要素を取得して監視
-        const elements = container.querySelectorAll('.scroll-animate');
+        // ページ内のすべてのアニメーション対象要素を取得して監視
+        const elements = document.querySelectorAll('.scroll-animate');
         elements.forEach(el => {
             // 監視する前に、もし 'is-visible' が残っていたら一度消してアニメーションをリセット
             el.classList.remove('is-visible');
@@ -131,12 +92,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // ===== ★★★ 変更: 初期表示処理 ★★★ =====
-    setupIntersectionObserver();
-    
-    // ブラウザの「戻る」「進む」ボタン（hashchangeイベント）をリッスン
-    window.addEventListener('hashchange', handleRouteChange);
-
-    // ページロード時に現在のハッシュに基づいてページを表示
-    handleRouteChange();
-    // ===== ★★★ 変更ここまで =====
+    // SPA用のルーティング(handleRouteChange)を削除し、
+    // スクロールアニメーションの初期化のみ実行
+    initializeScrollAnimations();
 });

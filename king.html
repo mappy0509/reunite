@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lounge KING - Reunite Group</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
+                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
+                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
+                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
+                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
+                        // ★★★ 求人情報カード用に 'sky' カラーを追加 ★★★
+                        'sky': {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                        },
+                    },
+                    transitionTimingFunction: {
+                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    animation: {
+                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-down': {
+                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(10px)', opacity: '0' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-white text-brand-secondary font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section id="king" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">Lounge KING</h2>
+
+            <div class="grid grid-cols-1 max-w-lg mx-auto gap-12">
+                
+                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.1s;">
+                    <div class="flex flex-col h-full">
+                        <div class="w-full overflow-hidden">
+                            <img src="img/king_lounge.jpg" alt="Lounge KING ロゴ" class="w-full h-64 object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
+                        </div>
+                        <div class="w-full p-8 md:p-10 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-brand-secondary mb-4">Lounge KING <span class="text-lg bg-brand-primary text-white font-bold px-3 py-1 rounded ml-2">NEW</span></h3>
+                            <p class="text-slate-600 mb-4 text-base flex-grow">
+                                中洲に新規オープンしたラウンジです。
+                                洗練された空間で、特別なひとときをお過ごしいただけます。
+                                SYKTSRが運営する新しいフラッグシップ店舗です。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 px-5 rounded-lg text-base hover:opacity-90 transition duration-300 mb-6 mt-auto">
+                                <i class="fab fa-instagram mr-2"></i> Instagram
+                            </a>
+                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200 mt-auto">
+                                <p class="text-slate-700 text-base"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-brand-secondary">所在地:</strong><br>
+                                    福岡市博多区中洲2-6-12<br>第5ラインビル2F
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+                
+                <div class="bg-white rounded-lg shadow-xl p-8 md:p-10 border border-gray-200 scroll-animate" style="transition-delay: 0.2s;">
+                    <h3 class="text-3xl font-bold text-center text-brand-secondary mb-8">SYSTEM</h3>
+                    <table class="w-full text-slate-600 text-lg">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">セット料金 (50分)</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">¥5,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">キープのお客様 (60分)</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">¥5,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">キャストドリンク</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">¥1,500</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">同伴</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">¥2,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">指名料・場内指名</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">各 ¥2,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">シングルチャージ</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">¥1,000</td>
+                            </tr>
+                            <tr class="hover:bg-brand-light">
+                                <th scope="row" class="py-4 pr-4 font-medium text-brand-secondary">サービス料・TAX</th>
+                                <td class="py-4 text-right font-bold text-brand-secondary">20%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center mt-8 space-y-2">
+                        <p class="text-xl font-bold text-brand-primary">★ カラオケ歌い放題無料 ★</p>
+                        <p class="text-xl font-bold text-brand-primary">★ 年中無休 ★</p>
+                    </div>
+                </div>
+
+                <div class_=("bg-sky-50 rounded-lg shadow-xl p-8 md:p-10 border border-sky-200 scroll-animate flex flex-col" style="transition-delay: 0.3s;">
+                    <h3 class="text-3xl font-bold text-center text-sky-800 mb-8">RECRUIT</h3>
+                    <ul class="space-y-4 text-xl text-sky-800 mb-8 flex-grow">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-sky-600 w-6 mr-3"></i> 
+                            <span class="font-medium">ドレス1着プレゼント</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-sky-600 w-6 mr-3"></i> 
+                            <span class="font-medium">未経験者大歓迎</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-sky-600 w-6 mr-3"></i> 
+                            <span class="font-medium">週1からの勤務OK</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-sky-600 w-6 mr-3"></i> 
+                            <span class="font-medium">送迎あり</span>
+                        </li>
+                    </ul>
+                    <div class="text-center bg-white p-6 rounded-lg border-2 border-sky-600 mt-auto">
+                        <p class="text-lg font-bold text-slate-600">時給</p>
+                        <p class="text-5xl font-black text-sky-700">3,000<span class_("text-3xl font-bold text-sky-700 ml-1">円〜</span></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
