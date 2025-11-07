@@ -57,3 +57,12 @@
         transform: translateY(0);
     }
 }
+
+/* ★★★ 新規: フッターアコーディオン用 ★★★ */
+.footer-accordion-content {
+    transition: all 0.3s ease-in-out;
+    /* メモ: 現状 script.js が 'hidden' をトグルしているため、
+       この transition は直接的には動作しませんが、
+       将来的にJS側でmax-height等を操作する実装に変更した際のために残します。
+    */
+}

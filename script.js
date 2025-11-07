@@ -47,12 +47,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (currentYearEl) {
                 currentYearEl.textContent = new Date().getFullYear();
             }
+
+            // ===== ★★★ 新規: フッターアコーディオン機能 (フッター読み込み後に実行) ★★★ =====
+            const footerToggles = document.querySelectorAll('.footer-accordion-toggle');
+            footerToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    
+                    // md (768px) 以上のスクリーンではJSによるトグルを無効化 (CSSで制御するため)
+                    if (window.innerWidth >= 768) {
+                        return;
+                    }
+
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.footer-accordion-icon');
+                    
+                    if (content && content.classList.contains('footer-accordion-content')) {
+                        // 'hidden' クラスをトグルする
+                        content.classList.toggle('hidden');
+                        
+                        // アイコンのテキストをトグルする
+                        if (icon) {
+                            if (content.classList.contains('hidden')) {
+                                icon.textContent = '+';
+                            } else {
+                                icon.innerHTML = '&minus;'; // マイナス記号
+                            }
+                        }
+                    }
+                });
+            });
+
         })
         .catch(error => console.error('Error loading footer:', error));
-
-    // ===== ★★★ 削除: ページ切り替え機能 (SPAロジック) ★★★ =====
-    // navLinks, pages, showPage(), handleRouteChange(), navLinks.forEach(), 'hashchange'イベントリスナー
-    // はすべて不要になったため削除。
 
     
     // ===== スクロールアニメーション機能 =====
@@ -92,7 +118,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // ===== ★★★ 変更: 初期表示処理 ★★★ =====
-    // SPA用のルーティング(handleRouteChange)を削除し、
     // スクロールアニメーションの初期化のみ実行
     initializeScrollAnimations();
 });
