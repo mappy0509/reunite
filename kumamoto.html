@@ -1,84 +1,57 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KUMAMOTO - Reunite Group</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0c0c0d">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
-                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
-                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
-                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
-                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
-                    },
-                    transitionTimingFunction: {
-                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
-                    },
-                    animation: {
-                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'scroll-down': {
-                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
-                            '50%': { opacity: '1' },
-                            '100%': { transform: 'translateY(10px)', opacity: '0' },
-                        }
-                    }
-                },
-            },
-        };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-white text-brand-secondary font-sans antialiased">
+<body>
 
     <div id="header-placeholder"></div>
 
     <main>
 
-        <section id="kumamoto" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-            <h2 class="text-4xl font-black text-center mb-4 text-brand-secondary scroll-animate">KUMAMOTO</h2>
-            <p class="text-center text-lg text-slate-500 mb-16 scroll-animate" style="transition-delay: 0.05s;">熊本の店舗</p>
-            <div class="grid grid-cols-1 gap-12">
+        <section id="kumamoto" class="page-section">
+            <header class="page-head" data-title="KUMAMOTO">
+                <div class="wrap">
+                    <h2 class="page-head__title">KUMAMOTO</h2>
+                    <p class="page-head__sub">熊本の店舗</p>
+                </div>
+            </header>
 
-                <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.1s;">
-                    <div class="flex flex-col md:flex-row">
-                        <div class="md:w-5/12 overflow-hidden flex flex-col items-center justify-center min-h-[16rem] py-10" style="background:#001e08;">
-                            <img src="img/cern_logo.png" alt="BAR CERN ロゴ" class="w-32 h-auto transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
-                            <span class="mt-4 text-2xl font-bold tracking-[0.3em]" style="color:#c9a55a;">BAR CERN</span>
-                        </div>
-                        <div class="md:w-7/12 p-8 md:p-10">
-                            <span class="inline-block bg-brand-gold text-white text-sm font-bold px-3 py-1 rounded mb-3">2026年12月 OPEN</span>
-                            <h3 class="text-2xl font-bold text-brand-secondary mb-3">BAR CERN</h3>
-                            <p class="text-slate-600 mb-4">
-                                熊本・下通のバー。<br>
-                                「特別な時間を、特別な空間で」。飲み放題プランもご用意しています。
-                            </p>
-                            <div class="bg-brand-light rounded-lg p-6 border border-gray-200">
-                                <p class="text-slate-700 text-lg"><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">所在地:</strong><br>熊本市中央区下通1丁目10<br>TM47ビル501</p>
-                                <p class="text-slate-700 mt-4 text-lg"><i class="fas fa-clock w-5 text-brand-primary"></i> <strong class="text-slate-800">営業時間:</strong><br>23:00 〜 5:00</p>
-                            </div>
+            <div class="wrap section">
+                <div class="entries">
+
+                <article class="entry reveal">
+                    <figure class="plate plate--cern">
+                        <img src="img/cern_logo.png" alt="BAR CERN ロゴ" loading="lazy" decoding="async">
+                        <span>BAR CERN</span>
+                    </figure>
+                    <div class="entry__body">
+                        <span class="tag">2026年12月 OPEN</span>
+                        <h3 class="entry__title">BAR CERN</h3>
+                        <p class="entry__text">
+                            熊本・下通のバー。<br>
+                            「特別な時間を、特別な空間で」。飲み放題プランもご用意しています。
+                        </p>
+                        <div class="facts">
+                            <p><i class="ic ic-pin" aria-hidden="true"></i> <strong>所在地:</strong><br>熊本市中央区下通1丁目10<br>TM47ビル501</p>
+                            <p><i class="ic ic-clock" aria-hidden="true"></i> <strong>営業時間:</strong><br>23:00 〜 5:00</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
+                </div>
             </div>
         </section>
 

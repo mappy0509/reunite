@@ -1,99 +1,86 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メディア出演 - Reunite Group</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0c0c0d">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
-                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
-                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
-                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
-                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
-                    },
-                    transitionTimingFunction: {
-                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
-                    },
-                    animation: {
-                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'scroll-down': {
-                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
-                            '50%': { opacity: '1' },
-                            '100%': { transform: 'translateY(10px)', opacity: '0' },
-                        }
-                    }
-                },
-            },
-        };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-white text-brand-secondary font-sans antialiased">
+<body>
 
     <div id="header-placeholder"></div>
 
     <main>
 
-        <section id="media" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-            <h2 class="text-4xl font-black text-center mb-16 text-brand-secondary scroll-animate">メディア出演</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-brand-light rounded-lg shadow-xl border overflow-hidden scroll-animate" style="transition-delay: 0.1s;">
-                    <img src="img/pariscollection.jpg" alt="パリコレクション スポンサー SACRIFICE" class="w-full h-auto">
-                    <div class="p-6">
-                        <p class="text-sm text-brand-primary font-bold mb-2">2025.10月</p>
-                        <h3 class="text-xl font-bold text-brand-secondary mb-2">パリコレスポンサー</h3>
-                        <p class="text-slate-600">【SACRIFICE】</p>
+        <section id="media" class="page-section">
+            <header class="page-head" data-title="メディア出演">
+                <div class="wrap">
+                    <h2 class="page-head__title">メディア出演</h2>
+                </div>
+            </header>
+
+            <div class="wrap section">
+                <div class="entries">
+
+                <article class="entry reveal">
+                    <figure class="plate plate--flush">
+                        <img src="img/pariscollection.jpg" alt="パリコレクション スポンサー SACRIFICE" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="entry__body">
+                        <p class="entry__date">2025.10月</p>
+                        <h3 class="entry__title">パリコレスポンサー</h3>
+                        <p class="entry__note">【SACRIFICE】</p>
                     </div>
+                </article>
+
                 </div>
             </div>
         </section>
 
-        <section id="fukurinpic" class="page-section container mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-            <h2 class="text-3xl font-black text-center mb-4 text-brand-secondary scroll-animate">協賛</h2>
-            <p class="text-center text-slate-500 mb-12 scroll-animate">第1回 福りんぴっく に協賛しています</p>
-            <div class="bg-white rounded-lg shadow-xl border overflow-hidden max-w-5xl mx-auto scroll-animate" style="transition-delay: 0.1s;">
-                <div class="md:flex">
-                    <div class="md:w-5/12 bg-brand-light">
+        <section id="fukurinpic" class="page-section">
+            <div class="wrap section section--tight-top">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">協賛</h2>
+                    <p class="sec-lead">第1回 福りんぴっく に協賛しています</p>
+                </div>
+                <div class="entries">
+
+                <article class="entry reveal">
+                    <figure class="plate plate--poster">
                         <a href="img/fukurinpic_flyer.jpg" target="_blank" rel="noopener noreferrer">
-                            <img src="img/fukurinpic_flyer.jpg" alt="福りんぴっく 体育館スペシャルステージ フライヤー" class="w-full h-auto">
+                            <img src="img/fukurinpic_flyer.jpg" alt="福りんぴっく 体育館スペシャルステージ フライヤー" loading="lazy" decoding="async">
                         </a>
-                    </div>
-                    <div class="md:w-7/12 p-6 md:p-10">
-                        <p class="text-sm text-brand-primary font-bold mb-2">2026.10月</p>
-                        <h3 class="text-2xl font-bold text-brand-secondary mb-4">第1回 福りんぴっく 協賛</h3>
-                        <p class="text-slate-600 leading-relaxed mb-6">
+                    </figure>
+                    <div class="entry__body">
+                        <p class="entry__date">2026.10月</p>
+                        <h3 class="entry__title">第1回 福りんぴっく 協賛</h3>
+                        <p class="entry__text">
                             福祉サービスを利用する方々が、日頃の訓練で培った「働く力」や技術を披露する技能競技大会です。
                             事務・接客・食品・軽作業・クリエイティブの5部門で、挑戦と成長を称え合います。
                             Reunite Group（合同会社SYKTSR）は、障がいのある方の就労への理解が広がることを願い、本大会に協賛しています。
                         </p>
-                        <div class="border-t border-gray-200 pt-4 space-y-3 text-slate-700">
-                            <p><i class="fas fa-calendar-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">開催日:</strong> 2026年10月24日（土）</p>
-                            <p><i class="fas fa-map-marker-alt w-5 text-brand-primary"></i> <strong class="text-slate-800">会場:</strong> 立花高等学校（福岡市東区和白丘）</p>
-                            <p><i class="fas fa-users w-5 text-brand-primary"></i> <strong class="text-slate-800">主催:</strong> 福りんぴっく実行委員会（福岡県就労支援協同組合）</p>
+                        <div class="facts facts--inline">
+                            <p><i class="ic ic-calendar" aria-hidden="true"></i> <strong>開催日:</strong> 2026年10月24日（土）</p>
+                            <p><i class="ic ic-pin" aria-hidden="true"></i> <strong>会場:</strong> 立花高等学校（福岡市東区和白丘）</p>
+                            <p><i class="ic ic-users" aria-hidden="true"></i> <strong>主催:</strong> 福りんぴっく実行委員会（福岡県就労支援協同組合）</p>
                         </div>
-                        <a href="https://fesc.jp/fukurimpic/" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 bg-brand-secondary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300">
-                            大会公式サイト <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
+                        <div class="entry__actions">
+                            <a href="https://fesc.jp/fukurimpic/" target="_blank" rel="noopener noreferrer" class="btn">
+                                大会公式サイト <i class="ic ic-external" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
+                </article>
+
                 </div>
             </div>
         </section>

@@ -1,88 +1,53 @@
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reunite Group - 福岡 | 飲食・美容・整体事業</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0c0c0d">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    },
-                    colors: {
-                        'brand-primary': '#1E3A8A', // 信頼感のあるネイビー (Blue-800)
-                        'brand-secondary': '#334155', // メインテキストカラー (Slate-700)
-                        'brand-light': '#F8FAFC', // セクション背景 (Slate-50)
-                        'brand-teal': '#0D9488', // 美容・整体アクセント (Teal-600)
-                        'brand-gold': '#D97706', // 飲食アクセント (Amber-600)
-                    },
-                    transitionTimingFunction: {
-                        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
-                    },
-                    animation: {
-                        'scroll-down': 'scroll-down 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'scroll-down': {
-                            '0%': { transform: 'translateY(-4px)', opacity: '0' },
-                            '50%': { opacity: '1' },
-                            '100%': { transform: 'translateY(10px)', opacity: '0' },
-                        }
-                    }
-                },
-            },
-        };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-white text-brand-secondary font-sans antialiased">
+<body>
 
     <div id="header-placeholder"></div>
 
     <main>
 
         <section id="home" class="page-section">
-            <div class="relative h-[50vh] md:h-[70vh] flex items-center justify-center text-center text-white overflow-hidden">
-                <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-                <img src="img/hero-background.png" 
-                     alt="[福岡の街並みとオフィスをイメージした背景画像]" 
-                     class="absolute inset-0 w-full h-full object-cover">
-                
-                <div class="relative z-20 p-4 max-w-3xl">
-                    <h2 class="hero-animate text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight" style="animation-delay: 0.5s;">
+            <div class="hero">
+                <img src="img/hero-background.jpg"
+                     alt="[福岡の街並みとオフィスをイメージした背景画像]"
+                     class="hero__bg" fetchpriority="high">
+
+                <div class="hero__inner">
+                    <h2 class="hero__title">
                         再び集う・繋がる。<br>"あなたらしさ"の創出へ
                     </h2>
                 </div>
 
-                <div class="hero-animate absolute bottom-12 left-1/2 -translate-x-1/2 z-20" style="animation-delay: 1.2s;">
-                    <div class="w-8 h-14 border-2 border-white/60 rounded-full flex justify-center items-start pt-2.5">
-                        <div class="w-2 h-3 bg-white rounded-full animate-scroll-down"></div>
-                    </div>
-                </div>
-
+                <div class="hero__scroll" aria-hidden="true"></div>
             </div>
 
-            <div class="bg-white py-16 sm:py-24">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-                    
-                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-8 scroll-animate" style="transition-delay: 0.1s;">Reunite Groupとは</h2>
+            <div class="section">
+                <div class="wrap about__grid">
 
-                    <img src="img/reunite.jpg" alt="Reunite Group Logo" class="w-48 mx-auto mb-12 scroll-animate" style="transition-delay: 0.15s;">
-                    
-                    <div class="text-lg text-slate-600 leading-relaxed space-y-6 scroll-animate" style="transition-delay: 0.2s;">
-                        <p class="text-xl font-bold text-brand-secondary text-center">
+                    <div class="about__head reveal">
+                        <h2 class="sec-title">Reunite Groupとは</h2>
+                        <figure class="about__logo">
+                            <img src="img/reunite.jpg" alt="Reunite Group Logo" loading="lazy" decoding="async">
+                        </figure>
+                    </div>
+
+                    <div class="about__body reveal">
+                        <p class="about__lead">
                             Reunite&nbsp;＝再び集う・つながる。<br>
                             （リユナイト）
                         </p>
@@ -102,61 +67,56 @@
                 </div>
             </div>
 
+            <div class="section on-ink">
+                <div class="wrap">
+                    <div class="sec-head reveal">
+                        <h2 class="sec-title">OUR BUSINESS</h2>
+                    </div>
+                    <div class="entries entries--numbered">
 
-            <div class="bg-brand-light py-16 sm:py-24">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 class="text-center text-3xl font-bold text-brand-secondary mb-12 scroll-animate">OUR BUSINESS</h2>
-                    <div class="grid grid-cols-1 gap-12">
-                        
-                        <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="md:w-5/12 overflow-hidden">
-                                    <img src="img/syktsr.jpg" 
-                                         alt="飲食事業" 
-                                         class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
-                                </div>
-                                <div class="md:w-7/12 p-8 md:p-10">
-                                    <h3 class="text-2xl font-bold text-brand-primary mb-3">飲食事業</h3>
-                                    <p class="text-slate-600 mb-8 text-lg">
-                                        福岡・熊本で、バーやラウンジを運営。多様な人々が集い、語らえる「憩いの空間」を提供します。
-                                    </p>
-                                    <div class="flex flex-wrap gap-4">
-                                        <a href="fukuoka.html" class="inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
-                                            福岡の店舗を見る <i class="fas fa-arrow-right ml-1"></i>
-                                        </a>
-                                        <a href="kumamoto.html" class="inline-block bg-brand-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
-                                            熊本の店舗を見る <i class="fas fa-arrow-right ml-1"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="group bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200 transform transition-all duration-500 ease-out-expo hover:shadow-2xl hover:-translate-y-2 scroll-animate" style="transition-delay: 0.2s;">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="md:w-5/12 overflow-hidden">
-                                    <img src="img/one-eighth.jpg"
-                                         alt="one eighth ロゴ"
-                                         class="w-full h-64 md:h-full object-cover transform transition-transform duration-500 ease-out-expo group-hover:scale-110">
-                                </div>
-                                <div class="md:w-7/12 p-8 md:p-10">
-                                    <h3 class="text-2xl font-bold text-brand-teal mb-3">インフルエンサー事業 (one eighth)</h3>
-                                    <p class="text-slate-600 mb-8 text-lg">
-                                        ショート動画を中心としたインフルエンサーマネジメント事務所。個人の魅力と影響力を磨き上げ、継続的に支持されるブランディングをサポートします。
-                                    </p>
-                                    <a href="one-eighth.html" class="inline-block bg-brand-teal text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-teal-700 transition duration-300">
-                                        one eighthの詳細を見る <i class="fas fa-arrow-right ml-1"></i>
+                        <article class="entry reveal">
+                            <figure class="plate">
+                                <img src="img/syktsr.jpg" alt="飲食事業" loading="lazy" decoding="async">
+                            </figure>
+                            <div class="entry__body">
+                                <h3 class="entry__title">飲食事業</h3>
+                                <p class="entry__text">
+                                    福岡・熊本で、バーやラウンジを運営。多様な人々が集い、語らえる「憩いの空間」を提供します。
+                                </p>
+                                <div class="entry__actions">
+                                    <a href="fukuoka.html" class="btn">
+                                        福岡の店舗を見る <i class="ic ic-arrow" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="kumamoto.html" class="btn btn--line">
+                                        熊本の店舗を見る <i class="ic ic-arrow" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </article>
+
+                        <article class="entry reveal">
+                            <figure class="plate">
+                                <img src="img/one-eighth.jpg" alt="one eighth ロゴ" loading="lazy" decoding="async">
+                            </figure>
+                            <div class="entry__body">
+                                <h3 class="entry__title">インフルエンサー事業 (one eighth)</h3>
+                                <p class="entry__text">
+                                    ショート動画を中心としたインフルエンサーマネジメント事務所。個人の魅力と影響力を磨き上げ、継続的に支持されるブランディングをサポートします。
+                                </p>
+                                <div class="entry__actions">
+                                    <a href="one-eighth.html" class="btn">
+                                        one eighthの詳細を見る <i class="ic ic-arrow" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
 
                     </div>
                 </div>
             </div>
         </section>
 
-        </main>
+    </main>
 
     <div id="footer-placeholder"></div>
 

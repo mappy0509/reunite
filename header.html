@@ -1,39 +1,33 @@
-<header class="bg-slate-800 shadow-lg sticky top-0 z-50 w-full">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <a href="index.html" class="text-2xl font-black text-white">
-                Reunite Group
-            </a>
-            
-            <div class="hidden md:flex space-x-3 lg:space-x-5">
-                <a href="index.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">ホーム</a>
-                <a href="fukuoka.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">FUKUOKA</a>
-                <a href="kumamoto.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">KUMAMOTO</a>
-                <a href="one-eighth.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">one eighth</a>
-                <a href="benefits.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">福利厚生</a>
-                <a href="company.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">会社概要</a>
-                <a href="partners.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">提携企業</a>
-                <a href="media.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">メディア出演</a>
-                <a href="contact.html" class="text-gray-300 hover:text-brand-teal font-medium transition duration-300">お問い合わせ</a>
-            </div>
+<header class="site-header">
+    <div class="wrap site-header__inner">
+        <a href="index.html" class="brand">Reunite Group</a>
 
-            <button id="hamburger-btn" class="md:hidden z-50 flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
-                <span class="hamburger-line line-1 block w-6 h-0.5 bg-white rounded-full"></span>
-                <span class="hamburger-line line-2 block w-6 h-0.5 bg-white rounded-full"></span>
-                <span class="hamburger-line line-3 block w-6 h-0.5 bg-white rounded-full"></span>
-            </button>
-        </div>
-    </nav>
+        <nav class="gnav" aria-label="グローバルナビゲーション">
+            <a href="index.html">ホーム</a>
+            <a href="fukuoka.html">FUKUOKA</a>
+            <a href="kumamoto.html">KUMAMOTO</a>
+            <a href="one-eighth.html">one eighth</a>
+            <a href="benefits.html">福利厚生</a>
+            <a href="company.html">会社概要</a>
+            <a href="partners.html">提携企業</a>
+            <a href="media.html">メディア出演</a>
+            <a href="contact.html">お問い合わせ</a>
+        </nav>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full min-h-screen bg-slate-800 flex flex-col justify-center items-center space-y-6 text-xl z-40 py-12">
-        <a href="index.html" class="text-gray-300 hover:text-brand-teal transition duration-300">ホーム</a>
-        <a href="fukuoka.html" class="text-gray-300 hover:text-brand-teal transition duration-300">FUKUOKA</a>
-        <a href="kumamoto.html" class="text-gray-300 hover:text-brand-teal transition duration-300">KUMAMOTO</a>
-        <a href="one-eighth.html" class="text-gray-300 hover:text-brand-teal transition duration-300">one eighth</a>
-        <a href="benefits.html" class="text-gray-300 hover:text-brand-teal transition duration-300">福利厚生</a>
-        <a href="company.html" class="text-gray-300 hover:text-brand-teal transition duration-300">会社概要</a>
-        <a href="partners.html" class="text-gray-300 hover:text-brand-teal transition duration-300">提携企業</a>
-        <a href="media.html" class="text-gray-300 hover:text-brand-teal transition duration-300">メディア出演</a>
-        <a href="contact.html" class="text-gray-300 hover:text-brand-teal transition duration-300">お問い合わせ</a>
+        <button id="hamburger-btn" class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+
+<nav id="mobile-menu" class="mobile-menu" aria-label="モバイルメニュー">
+    <a href="index.html">ホーム</a>
+    <a href="fukuoka.html">FUKUOKA</a>
+    <a href="kumamoto.html">KUMAMOTO</a>
+    <a href="one-eighth.html">one eighth</a>
+    <a href="benefits.html">福利厚生</a>
+    <a href="company.html">会社概要</a>
+    <a href="partners.html">提携企業</a>
+    <a href="media.html">メディア出演</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
